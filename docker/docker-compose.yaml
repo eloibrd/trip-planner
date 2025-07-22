@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: tp-postgres
+    restart: always
+    env_file: db.env
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - tp-pg-data:/var/lib/postgresql/data
+
+volumes:
+  tp-pg-data:
