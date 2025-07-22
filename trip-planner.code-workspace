@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "name": "Backend - Go",
+      "path": "backend"
+    },
+    {
+      "name": "Docker",
+      "path": "docker"
+    },
+    {
+      "name": "Project",
+      "path": "."
+    }
+  ]
+}
