@@ -12,5 +12,18 @@ services:
     volumes:
       - tp-pg-data:/var/lib/postgresql/data
 
+  pgweb:
+    image: sosedoff/pgweb:latest
+    container_name: pgweb
+    restart: always
+    ports:
+      - "8081:8081"
+    links:
+      - postgres:tp-postgres
+    environment:
+      PGWEB_DATABASE_URL: postgres://postgres:rootp4ssworD@postgres:5432/trip_planner?sslmode=disable
+    depends_on:
+      - postgres
+
 volumes:
   tp-pg-data:
