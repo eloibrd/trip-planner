@@ -1,13 +1,14 @@
-version: "3.9"
-
 services:
   postgres:
     image: postgres:16-alpine
     container_name: tp-postgres
     restart: always
-    env_file: db.env
+    environment:
+      POSTGRES_DB: trip_planner
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: rootp4ssworD
     ports:
-      - "${DB_PORT}:5432"
+      - "5432:5432"
     volumes:
       - tp-pg-data:/var/lib/postgresql/data
 
